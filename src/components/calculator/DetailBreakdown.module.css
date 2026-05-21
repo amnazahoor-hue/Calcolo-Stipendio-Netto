@@ -1,0 +1,138 @@
+.wrapper {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+.header {
+  padding: 20px 24px;
+  background: linear-gradient(135deg, var(--teal-50) 0%, var(--teal-100) 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.header h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.header p {
+  font-size: 13px;
+  max-width: none;
+  margin: 0;
+}
+
+.table {
+  padding: 0;
+}
+
+.tableHead {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  padding: 12px 24px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.tableHead span:last-child {
+  text-align: right;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 24px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s ease;
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.tableRow:hover:not(.total) {
+  background: rgba(248, 250, 252, 0.8);
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.sublabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--button);
+}
+
+.value {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.deduction .value {
+  color: #dc2626;
+}
+
+.benefit .value {
+  color: var(--secondary);
+}
+
+.base .value {
+  color: var(--text-primary);
+}
+
+.total {
+  background: linear-gradient(135deg, rgba(82, 181, 170, 0.12) 0%, rgba(46, 139, 130, 0.08) 100%);
+}
+
+.total .label {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.total .value {
+  font-size: 18px;
+  color: var(--secondary);
+}
+
+.note {
+  padding: 14px 24px;
+  font-size: 13px;
+  max-width: none;
+  margin: 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+.note strong {
+  color: var(--text-primary);
+}
+
+@media (max-width: 600px) {
+  .tableHead,
+  .tableRow {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .value {
+    font-size: 13px;
+  }
+}

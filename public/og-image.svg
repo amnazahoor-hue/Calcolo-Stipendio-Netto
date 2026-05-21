@@ -1,0 +1,23 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NetPay Italia - Italian Net Salary Calculator 2026">
+  <rect width="1200" height="630" fill="#F8FAFC"/>
+  <rect x="0" y="0" width="1200" height="630" fill="url(#grad)" opacity="0.15"/>
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1200" y2="630">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+  </defs>
+  <rect x="80" y="200" width="72" height="72" rx="16" fill="#1E3A8A"/>
+  <path d="M98 248L118 218L130 232L154 200" stroke="#10B981" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="154" cy="200" r="4" fill="#10B981"/>
+  <text x="180" y="235" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="700">NetPay Italia</text>
+  <text x="180" y="275" fill="#10B981" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600">ITALIAN NET SALARY CALCULATOR 2026</text>
+  <text x="180" y="340" fill="#475569" font-family="Inter, Arial, sans-serif" font-size="28">Calculate your exact take-home salary after taxes</text>
+  <rect x="180" y="380" width="280" height="56" rx="12" fill="#2563EB"/>
+  <text x="320" y="416" fill="white" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="500" text-anchor="middle">RAL ’ Net in seconds</text>
+  <circle cx="900" cy="315" r="120" fill="none" stroke="#E2E8F0" stroke-width="24"/>
+  <circle cx="900" cy="315" r="120" fill="none" stroke="#10B981" stroke-width="24" stroke-dasharray="502" stroke-dashoffset="140" transform="rotate(-90 900 315)"/>
+  <circle cx="900" cy="315" r="120" fill="none" stroke="#1E3A8A" stroke-width="24" stroke-dasharray="502" stroke-dashoffset="320" transform="rotate(-90 900 315)"/>
+  <text x="900" y="310" fill="#10B981" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700" text-anchor="middle">¬1,996</text>
+  <text x="900" y="345" fill="#475569" font-family="Inter, Arial, sans-serif" font-size="16" text-anchor="middle">/month net</text>
+</svg>

@@ -1,0 +1,255 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease;
+}
+
+.item:hover {
+  box-shadow: var(--card-shadow);
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.trigger.active {
+  color: var(--button);
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--button);
+  background: rgba(46, 139, 130, 0.12);
+  border-radius: 8px;
+  transition: transform 0.25s ease;
+}
+
+.iconOpen {
+  transform: rotate(45deg);
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contentOpen {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.content {
+  padding: 0 24px 20px;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.content p {
+  max-width: none;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.faq {
+  gap: 0;
+  background: var(--white);
+  border: 1px solid var(--teal-100);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow-lg);
+}
+
+.faqFill {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.faqFill .item {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.faqFill .itemOpen {
+  flex: 0 0 auto;
+}
+
+.faqFill .trigger {
+  flex: 1;
+}
+
+.faq .item {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--teal-100);
+  box-shadow: none;
+  transition: background 0.2s ease;
+}
+
+.faq .item:last-child {
+  border-bottom: none;
+}
+
+.faq .item:hover {
+  box-shadow: none;
+}
+
+.faq .trigger {
+  padding: 24px 28px;
+  min-height: 44px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: normal;
+  align-items: center;
+  color: var(--text-primary);
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.faq .question {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.faq .chevronWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.faq .contentWrapper:not(.contentOpen) {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin: 0;
+}
+
+.faq .trigger.active {
+  color: var(--text-primary);
+  background: transparent;
+}
+
+.faq .itemHover {
+  background: linear-gradient(135deg, var(--teal-500), var(--teal-600));
+}
+
+.faq .itemHover .trigger {
+  color: var(--white);
+}
+
+.faq .itemHover .chevron {
+  color: var(--white);
+}
+
+.faq .itemOpen {
+  background: linear-gradient(135deg, var(--teal-500), var(--teal-600));
+}
+
+.faq .itemOpen .trigger {
+  color: var(--white);
+  background: transparent;
+}
+
+.faq .itemOpen .trigger.active {
+  color: var(--white);
+}
+
+.faq .chevron {
+  flex-shrink: 0;
+  color: var(--teal-400);
+  transition: transform 0.25s ease, color 0.2s ease;
+}
+
+.faq .itemOpen .chevron {
+  color: var(--white);
+}
+
+.faq .chevronOpen {
+  transform: rotate(180deg);
+}
+
+.faq .itemOpen .content {
+  padding: 0 28px 26px;
+  background: transparent;
+}
+
+.faq .itemOpen .content p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.faq .content {
+  padding: 0 28px 26px;
+  background: transparent;
+}
+
+.faq .content p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .trigger {
+    padding: 16px 18px;
+    font-size: 15px;
+  }
+
+  .content {
+    padding: 0 18px 16px;
+  }
+
+  .faq .trigger {
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  .faq .content,
+  .faq .itemOpen .content {
+    padding: 0 20px 22px;
+  }
+}

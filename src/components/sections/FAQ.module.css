@@ -1,0 +1,131 @@
+.section {
+  background: var(--bg-faq);
+  position: relative;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 60% at 0% 50%, rgba(82, 181, 170, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 50% at 100% 20%, rgba(46, 139, 130, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
+  gap: 48px 64px;
+  align-items: start;
+}
+
+.intro {
+  position: sticky;
+  top: calc(var(--header-height) + 32px);
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+}
+
+.intro h2 {
+  margin-bottom: 20px;
+  font-size: clamp(32px, 4vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.intro p {
+  max-width: none;
+  margin: 0 0 24px;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.trustLine {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--teal-700);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--teal-100);
+  border-radius: 999px;
+}
+
+.trustDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--teal-400);
+  box-shadow: 0 0 0 3px rgba(82, 181, 170, 0.25);
+}
+
+.illustration {
+  position: relative;
+  margin-top: 32px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--teal-100);
+  box-shadow: var(--card-shadow);
+}
+
+.faqImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+}
+
+.panel {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.panelInner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+}
+
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .intro {
+    position: static;
+    text-align: center;
+    align-items: center;
+    padding: 0 8px;
+  }
+
+  .trustLine {
+    margin: 0 auto;
+  }
+
+  .illustration {
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .panel {
+    width: 100%;
+    min-width: 0;
+  }
+}

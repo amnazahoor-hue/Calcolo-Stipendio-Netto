@@ -1,0 +1,31 @@
+.fadeIn {
+  opacity: 0;
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.visible {
+  opacity: 1;
+  transform: translate(0, 0) !important;
+}
+
+.up {
+  transform: translateY(40px);
+}
+
+.down {
+  transform: translateY(-40px);
+}
+
+.left {
+  transform: translateX(40px);
+}
+
+.right {
+  transform: translateX(-40px);
+}
+
+.visible.none {
+  transform: none !important;
+}
