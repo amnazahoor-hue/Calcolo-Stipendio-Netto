@@ -858,32 +858,58 @@
 }
 
 @media (max-width: 600px) {
+  .statsBar {
+    margin-top: 24px;
+  }
+
   .statsInner {
-    grid-template-columns: 1fr;
-    gap: 10px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
   }
 
   .statItem {
-    padding: 16px 18px;
-    gap: 14px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px 6px;
+    gap: 6px;
+    border-radius: 14px;
   }
 
-  .statContent strong {
-    font-size: 22px;
-  }
-
-  .statContent span {
-    font-size: 12px;
+  .statItem:hover {
+    transform: none;
   }
 
   .statIcon {
-    width: 46px;
-    height: 46px;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
   }
 
   .statIcon svg {
-    width: 22px;
-    height: 22px;
+    width: 17px;
+    height: 17px;
+  }
+
+  .statContent {
+    align-items: center;
+    gap: 2px;
+  }
+
+  .statContent strong {
+    font-size: 14px;
+    letter-spacing: -0.02em;
+  }
+
+  .statContent span {
+    font-size: 9px;
+    line-height: 1.25;
+    max-width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 
