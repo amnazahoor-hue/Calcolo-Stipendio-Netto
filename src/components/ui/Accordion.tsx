@@ -2,10 +2,14 @@
 
 import { useState } from "react";
 import styles from "./Accordion.module.css";
-import type { FAQItem } from "@/lib/faq-data";
+
+export interface AccordionItem {
+  question: string;
+  answer: string;
+}
 
 interface AccordionProps {
-  items: FAQItem[];
+  items: readonly AccordionItem[];
   variant?: "default" | "faq";
   fillHeight?: boolean;
 }
@@ -80,5 +84,3 @@ export function Accordion({ items, variant = "default", fillHeight = false }: Ac
     </div>
   );
 }
-
-export type { FAQItem };

@@ -13,7 +13,7 @@ export const HERO_RAL_PREFILL_KEY = "netpay-prefill-ral";
 function formatRalDisplay(value: string): string {
   const digits = value.replace(/\D/g, "");
   if (!digits) return "";
-  return Number(digits).toLocaleString("en-US");
+  return Number(digits).toLocaleString("it-IT");
 }
 
 export function Hero() {
@@ -72,6 +72,22 @@ export function Hero() {
                 <stop offset="88%" stopColor="rgba(14, 159, 110, 0.45)" />
                 <stop offset="100%" stopColor="rgba(14, 159, 110, 0)" />
               </linearGradient>
+              <linearGradient
+                id="heroArcFadeX"
+                x1="0"
+                y1="280"
+                x2="1440"
+                y2="280"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0%" stopColor="white" stopOpacity="0" />
+                <stop offset="10%" stopColor="white" stopOpacity="1" />
+                <stop offset="90%" stopColor="white" stopOpacity="1" />
+                <stop offset="100%" stopColor="white" stopOpacity="0" />
+              </linearGradient>
+              <mask id="heroArcSideMask" maskUnits="userSpaceOnUse">
+                <rect x="0" y="0" width="1440" height="560" fill="url(#heroArcFadeX)" />
+              </mask>
               <filter
                 id="heroArcBlur"
                 x="-20%"
@@ -83,23 +99,25 @@ export function Hero() {
                 <feGaussianBlur stdDeviation="14" />
               </filter>
             </defs>
-            <path d="M-100 560 C 200 20, 1240 20, 1540 560 Z" fill="url(#heroArcFill)" />
-            <path
-              d="M-100 560 C 200 20, 1240 20, 1540 560"
-              stroke="rgba(14, 159, 110, 0.5)"
-              strokeWidth="10"
-              fill="none"
-              strokeLinecap="round"
-              filter="url(#heroArcBlur)"
-              opacity="0.85"
-            />
-            <path
-              d="M-100 560 C 200 20, 1240 20, 1540 560"
-              stroke="url(#heroArcStroke)"
-              strokeWidth="3.5"
-              fill="none"
-              strokeLinecap="round"
-            />
+            <g mask="url(#heroArcSideMask)">
+              <path d="M-100 560 C 200 20, 1240 20, 1520 560 Z" fill="url(#heroArcFill)" />
+              <path
+                d="M-100 560 C 200 20, 1240 20, 1520 560"
+                stroke="rgba(14, 159, 110, 0.5)"
+                strokeWidth="10"
+                fill="none"
+                strokeLinecap="round"
+                filter="url(#heroArcBlur)"
+                opacity="0.85"
+              />
+              <path
+                d="M-100 560 C 200 20, 1240 20, 1520 560"
+                stroke="url(#heroArcStroke)"
+                strokeWidth="3.5"
+                fill="none"
+                strokeLinecap="round"
+              />
+            </g>
           </svg>
         </div>
       </div>
@@ -117,16 +135,13 @@ export function Hero() {
               del settore pubblico a valutare le offerte di lavoro e a stimare la loro
               retribuzione netta dopo le tasse. Se vuoi calcolare lo stipendio netto, lo
               stipendio da lordo a netto e altre conversioni simili, questo strumento fornisce
-              risultati accurati basati sulle normative fiscali italiane vigenti.
-            </p>
-            <p>
-              Inserendo il tuo stipendio lordo o il tuo reddito annuo, puoi calcolare il tuo
-              reddito netto mensile e annuo stimato. Il calcolatore tiene conto di fattori
-              chiave come la tassazione IRPEF, i contributi INPS, le detrazioni a carico del
-              dipendente e altri elementi che influenzano l&apos;importo finale accreditato sul
-              tuo conto bancario. Applica inoltre le aliquote fiscali scaglioni irpef del 2026,
-              dal 23% al 43%, per mostrare esattamente quante tasse si pagano per ogni livello
-              di reddito.
+              risultati accurati basati sulle normative fiscali italiane vigenti. Inserendo il
+              tuo stipendio lordo o il tuo reddito annuo, puoi calcolare il tuo reddito netto
+              mensile e annuo stimato. Il calcolatore tiene conto di fattori chiave come la
+              tassazione IRPEF, i contributi INPS, le detrazioni a carico del dipendente e altri
+              elementi che influenzano l&apos;importo finale accreditato sul tuo conto bancario.
+              Applica inoltre le aliquote fiscali scaglioni irpef del 2026, dal 23% al 43%, per
+              mostrare esattamente quante tasse si pagano per ogni livello di reddito.
             </p>
           </div>
 
@@ -172,8 +187,9 @@ export function Hero() {
                     <span className={styles.rulesDot} aria-hidden />
                     Regole 2026
                   </span>
-                  <button type="submit" className={styles.submitBtn} aria-label="Calcola stipendio netto">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <button type="submit" className={styles.submitBtn}>
+                    <span>Calcola netto</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
                       <path
                         d="M12 19V5M12 5L6 11M12 5L18 11"
                         stroke="currentColor"
@@ -191,11 +207,13 @@ export function Hero() {
 
           <div className={styles.trusted}>
             <p className={styles.trustedLabel}>
-              Lo strumento gratuito di riferimento per
+              Calcolatore di riferimento per dipendenti in tutta Italia
             </p>
             <ul className={styles.trustList}>
               {TRUST_ITEMS.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item}>
+                  <span>{item}</span>
+                </li>
               ))}
             </ul>
           </div>

@@ -6,6 +6,13 @@ export const SITE_META_TITLE =
 export const SITE_META_DESCRIPTION =
   "Calcolo stipendio netto in Italia per il 2026. Utilizza il nostro calcolatore di stipendio lordo-netto per stimare la retribuzione netta che riceverai a partire dallo stipendio lordo, inclusi i contributi INPS.";
 export const SITE_FOCUS_KEYWORD = "calcolo stipendio netto";
+
+export const IRPEF_PAGE_SLUG = "/scaglioni-irpef";
+export const IRPEF_PAGE_META_TITLE =
+  "Scaglioni IRPEF in Italia | Aliquote, calcolo e guida fiscale";
+export const IRPEF_PAGE_META_DESCRIPTION =
+  "Scopri gli ultimi Scaglioni IRPEF in Italia per il periodo 2025-2026. Scopri le aliquote attuali, come viene calcolato l'IRPEF, le detrazioni e le ultime riforme fiscali.";
+export const IRPEF_PAGE_FOCUS_KEYWORD = "Scaglioni IRPEF";
 /** @deprecated Use SITE_META_DESCRIPTION */
 export const SITE_DESCRIPTION = SITE_META_DESCRIPTION;
 
@@ -49,6 +56,7 @@ export const NAV_LINKS = [
 
 export const FOOTER_NAV = [
   { href: "#calculator", label: "Calculator" },
+  { href: IRPEF_PAGE_SLUG, label: "Scaglioni IRPEF" },
   { href: "#how-it-works", label: "How It Works" },
   { href: "#salary-breakdown", label: "Salary Breakdown" },
   { href: "#faq", label: "FAQ" },
