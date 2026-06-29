@@ -19,8 +19,8 @@
 
 .textarea:focus {
   outline: none;
-  border-color: var(--button);
-  box-shadow: 0 0 0 3px rgba(46, 139, 130, 0.15);
+  border-color: var(--color-net);
+  box-shadow: 0 0 0 3px var(--color-focus);
 }
 
 .textarea.error {

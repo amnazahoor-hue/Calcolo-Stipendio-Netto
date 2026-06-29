@@ -1,6 +1,7 @@
 "use client";
 
 import { SalaryBreakdown as BreakdownType } from "@/lib/salary-calculator";
+import { breakdownColors } from "@/lib/design-tokens";
 import { formatCurrency } from "@/lib/format";
 import styles from "./BreakdownChart.module.css";
 
@@ -9,10 +10,10 @@ interface BreakdownChartProps {
 }
 
 const COLORS = {
-  net: "#10B981",
-  inps: "#6366F1",
-  irpef: "#2563EB",
-  local: "#F59E0B",
+  net: breakdownColors.net,
+  inps: breakdownColors.inps,
+  irpef: breakdownColors.irpef,
+  local: breakdownColors.local,
 };
 
 export function BreakdownChart({ breakdown }: BreakdownChartProps) {

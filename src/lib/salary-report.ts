@@ -1,3 +1,4 @@
+import { verdeTrust } from "@/lib/design-tokens";
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
@@ -130,63 +131,63 @@ function buildReportHtml(b: SalaryBreakdown): string {
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: Inter, Segoe UI, Arial, sans-serif;
-      color: #133e3a;
-      background: #f5fbfa;
+      color: ${verdeTrust.text};
+      background: ${verdeTrust.bg};
       padding: 32px;
     }
     .page {
       max-width: 760px;
       margin: 0 auto;
-      background: #fff;
-      border: 1px solid #c8eae5;
+      background: ${verdeTrust.surface};
+      border: 1px solid ${verdeTrust.border};
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 16px 48px rgba(19, 62, 58, 0.1);
+      box-shadow: 0 16px 48px rgba(20, 32, 27, 0.1);
     }
     .header {
-      background: linear-gradient(135deg, #133e3a 0%, #2e8b82 100%);
-      color: #e6f5f3;
+      background: linear-gradient(135deg, ${verdeTrust.primary} 0%, ${verdeTrust.primaryHover} 100%);
+      color: ${verdeTrust.surface};
       padding: 28px 32px;
     }
     .brand { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
     .brand-icon {
       width: 44px; height: 44px; border-radius: 12px;
-      background: #2e8b82; display: flex; align-items: center; justify-content: center;
+      background: ${verdeTrust.primary}; display: flex; align-items: center; justify-content: center;
     }
     .brand-icon svg { width: 28px; height: 28px; }
     .brand-name { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
-    .brand-name span { display: block; font-size: 12px; font-weight: 600; color: #6ec4ba; letter-spacing: 0.08em; }
+    .brand-name span { display: block; font-size: 12px; font-weight: 600; color: ${verdeTrust.net}; letter-spacing: 0.08em; }
     .header h1 { font-size: 26px; margin-bottom: 6px; }
-    .header p { color: #c8eae5; font-size: 14px; }
+    .header p { color: rgba(255,255,255,0.72); font-size: 14px; }
     .hero {
       display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
-      padding: 24px 32px; background: #e6f5f3; border-bottom: 1px solid #c8eae5;
+      padding: 24px 32px; background: ${verdeTrust.surfaceSubtle}; border-bottom: 1px solid ${verdeTrust.border};
     }
     .hero-box {
-      background: #fff; border: 1px solid #c8eae5; border-radius: 12px; padding: 18px;
+      background: ${verdeTrust.surface}; border: 1px solid ${verdeTrust.border}; border-radius: 12px; padding: 18px;
     }
-    .hero-box span { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #3d6b65; margin-bottom: 6px; }
-    .hero-box strong { font-size: 28px; color: #2e8b82; }
-    .hero-box.secondary strong { font-size: 22px; color: #133e3a; }
-    .meta { padding: 16px 32px; font-size: 13px; color: #3d6b65; border-bottom: 1px solid #c8eae5; }
+    .hero-box span { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: ${verdeTrust.textSecondary}; margin-bottom: 6px; }
+    .hero-box strong { font-size: 28px; color: ${verdeTrust.net}; }
+    .hero-box.secondary strong { font-size: 22px; color: ${verdeTrust.text}; }
+    .meta { padding: 16px 32px; font-size: 13px; color: ${verdeTrust.textSecondary}; border-bottom: 1px solid ${verdeTrust.border}; }
     table { width: 100%; border-collapse: collapse; }
     th {
       text-align: left; padding: 12px 32px; font-size: 11px; text-transform: uppercase;
-      letter-spacing: 0.06em; color: #3d6b65; background: #f5fbfa; border-bottom: 1px solid #c8eae5;
+      letter-spacing: 0.06em; color: ${verdeTrust.textSecondary}; background: ${verdeTrust.bg}; border-bottom: 1px solid ${verdeTrust.border};
     }
     th:last-child { text-align: right; }
-    td { padding: 14px 32px; border-bottom: 1px solid #e6f5f3; font-size: 14px; }
+    td { padding: 14px 32px; border-bottom: 1px solid ${verdeTrust.surfaceSubtle}; font-size: 14px; }
     td:last-child { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
-    tr.deduction td:last-child { color: #dc2626; }
-    tr.benefit td:last-child { color: #2e8b82; }
-    tr.total { background: rgba(46, 139, 130, 0.08); }
+    tr.deduction td:last-child { color: ${verdeTrust.error}; }
+    tr.benefit td:last-child { color: ${verdeTrust.net}; }
+    tr.total { background: ${verdeTrust.netTint}; }
     tr.total td { font-size: 15px; font-weight: 700; }
-    tr.total td:last-child { color: #2e8b82; font-size: 17px; }
+    tr.total td:last-child { color: ${verdeTrust.net}; font-size: 17px; }
     .footer {
-      padding: 18px 32px; font-size: 12px; color: #3d6b65; background: #f5fbfa;
-      border-top: 1px solid #c8eae5; line-height: 1.6;
+      padding: 18px 32px; font-size: 12px; color: ${verdeTrust.textSecondary}; background: ${verdeTrust.bg};
+      border-top: 1px solid ${verdeTrust.border}; line-height: 1.6;
     }
-    @media print { body { padding: 0; background: #fff; } .page { box-shadow: none; border: none; } }
+    @media print { body { padding: 0; background: ${verdeTrust.surface}; } .page { box-shadow: none; border: none; } }
   </style>
 </head>
 <body>
@@ -194,7 +195,7 @@ function buildReportHtml(b: SalaryBreakdown): string {
     <div class="header">
       <div class="brand">
         <div class="brand-icon">
-          <svg viewBox="0 0 32 32" fill="none"><rect x="2" y="6" width="28" height="28" rx="8" fill="#2E8B82"/><path d="M8 22L14 14L18 18L24 10" stroke="#6EC4BA" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <svg viewBox="0 0 32 32" fill="none"><rect x="2" y="6" width="28" height="28" rx="8" fill="${verdeTrust.primary}"/><path d="M8 22L14 14L18 18L24 10" stroke="${verdeTrust.net}" stroke-width="2.5" stroke-linecap="round"/></svg>
         </div>
         <div class="brand-name">${SITE_NAME}<span>ITALIA</span></div>
       </div>

@@ -1,9 +1,9 @@
 import type { MetadataRoute } from "next";
-import { SITE_URL } from "@/lib/constants";
+import { HOME_SLUG, SITE_URL } from "@/lib/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
-    "",
+    HOME_SLUG,
     "/privacy-policy",
     "/terms-and-conditions",
     "/disclaimer",
@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((route) => ({
     url: `${SITE_URL}${route}`,
     lastModified: new Date(),
-    changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : 0.7,
+    changeFrequency: route === HOME_SLUG ? "weekly" : "monthly",
+    priority: route === HOME_SLUG ? 1 : 0.7,
   }));
 }

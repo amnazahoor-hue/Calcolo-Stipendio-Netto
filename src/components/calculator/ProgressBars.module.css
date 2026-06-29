@@ -20,7 +20,7 @@
 
 .highlight {
   font-weight: 600;
-  color: var(--secondary);
+  color: var(--color-net);
 }
 
 .amount {

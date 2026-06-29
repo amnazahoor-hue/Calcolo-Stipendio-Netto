@@ -1,7 +1,13 @@
 export const SITE_NAME = "NetPay Italia";
-export const SITE_URL = "https://calcolostipendionetto.it";
-export const SITE_DESCRIPTION =
-  "Calculate your exact Italian take-home salary from RAL. IRPEF, INPS, regional taxes , updated for 2026.";
+export const SITE_URL = "https://icalcolostipendionetto.it";
+export const HOME_SLUG = "/calcolo-stipendio-netto";
+export const SITE_META_TITLE =
+  "Calcolo stipendio netto in Italia | Calcolatore dallo stipendio lordo a netto";
+export const SITE_META_DESCRIPTION =
+  "Calcolo stipendio netto in Italia per il 2026. Utilizza il nostro calcolatore di stipendio lordo-netto per stimare la retribuzione netta che riceverai a partire dallo stipendio lordo, inclusi i contributi INPS.";
+export const SITE_FOCUS_KEYWORD = "calcolo stipendio netto";
+/** @deprecated Use SITE_META_DESCRIPTION */
+export const SITE_DESCRIPTION = SITE_META_DESCRIPTION;
 
 export const IRPEF_BRACKETS = [
   { limit: 28000, rate: 0.23 },

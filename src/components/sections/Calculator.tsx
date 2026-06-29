@@ -22,6 +22,7 @@ import {
   SalaryBreakdown,
   validateSalaryInput,
 } from "@/lib/salary-calculator";
+import { HERO_RAL_PREFILL_KEY } from "@/components/sections/Hero";
 import styles from "./Calculator.module.css";
 
 function InfoTip({ text }: { text: string }) {
@@ -92,6 +93,13 @@ export function CalculatorSection() {
     }
   };
 
+  useEffect(() => {
+    const prefill = sessionStorage.getItem(HERO_RAL_PREFILL_KEY);
+    if (!prefill) return;
+    sessionStorage.removeItem(HERO_RAL_PREFILL_KEY);
+    handleRalInput(prefill);
+  }, []);
+
   const buildInput = useCallback(
     () => ({
       ral,
@@ -161,11 +169,17 @@ export function CalculatorSection() {
     <section id="calculator" className={`section ${styles.section}`}>
       <div className="container">
         <FadeIn className={styles.header}>
-          <span className="section-label">Salary Calculator</span>
-          <h2>Calculate Your Net Salary</h2>
+          <span className="section-label">Calcolatore stipendio</span>
+          <h2>Stipendio Da Lordo a Netto Calcolo</h2>
           <p>
-            Enter your RAL and tax details in four steps , same structure as a
-            professional Italian payslip calculator, with full 2026 rules applied.
+            La conversione da stipendio lordo a netto è molto importante da comprendere,
+            poiché ti aiuterà a calcolare l&apos;importo lordo rimanente dopo le detrazioni
+            fiscali. Lo stipendio lordo è l&apos;importo che il dipendente guadagna dal
+            datore di lavoro, mentre lo stipendio netto è l&apos;importo che il dipendente
+            riceve sul proprio conto bancario. I calcoli dello stipendio lordo-netto sono
+            molto importanti e dipendono da vari fattori, come l&apos;imposta IRPEF, i
+            contributi INPS, le detrazioni fiscali dei dipendenti e le sovrattasse regionali
+            e comunali.
           </p>
         </FadeIn>
 

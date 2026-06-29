@@ -87,7 +87,7 @@
 }
 
 .deduction .value {
-  color: #dc2626;
+  color: var(--error);
 }
 
 .benefit .value {

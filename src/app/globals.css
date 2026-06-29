@@ -1,63 +1,100 @@
 :root {
-  --teal-50: #e6f5f3;
-  --teal-100: #c8eae5;
-  --teal-200: #9dd5cd;
-  --teal-300: #6ec4ba;
-  --teal-400: #52b5aa;
-  --teal-500: #2e8b82;
-  --teal-600: #237067;
-  --teal-700: #1a524c;
-  --teal-800: #133e3a;
-  --teal-900: #0d2e2b;
+  /* ── Verde Trust: Surfaces ── */
+  --color-bg: #fbfaf7;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f3f1eb;
 
-  --primary: var(--teal-700);
-  --secondary: var(--teal-400);
-  --button: var(--teal-500);
-  --hover: var(--teal-600);
-  --accent: var(--teal-300);
+  /* ── Verde Trust: Text ── */
+  --color-text: #14201b;
+  --color-text-secondary: #5a6862;
+  --color-text-muted: #8a968f;
 
-  --text-primary: var(--teal-800);
-  --text-secondary: #3d6b65;
-  --text-on-dark: var(--teal-50);
-  --text-muted-on-dark: var(--teal-200);
+  /* ── Verde Trust: Borders ── */
+  --color-border: #e6e3db;
+  --color-border-strong: #d4d0c6;
 
-  --border: var(--teal-100);
-  --success: var(--teal-500);
+  /* ── Verde Trust: Brand / actions (CTA) ── */
+  --color-primary: #0f1e1a;
+  --color-primary-hover: #1c3530;
+
+  /* ── Verde Trust: NET / positive money only ── */
+  --color-net: #0e9f6e;
+  --color-net-hover: #0b8a5f;
+  --color-net-tint: #e7f4ee;
+
+  /* ── Verde Trust: Data-viz / breakdown ── */
+  --color-irpef: #0b7a5e;
+  --color-inps: #5b8def;
+  --color-local-tax: #e0a93f;
+
+  /* ── Verde Trust: Focus ── */
+  --color-focus: rgba(14, 159, 110, 0.35);
+
+  /* ── Semantic aliases (used across CSS modules) ── */
+  --bg: var(--color-bg);
+  --white: var(--color-surface);
+  --text-primary: var(--color-text);
+  --text-secondary: var(--color-text-secondary);
+  --text-muted: var(--color-text-muted);
+  --border: var(--color-border);
+  --border-strong: var(--color-border-strong);
+
+  --cta: var(--color-primary);
+  --cta-hover: var(--color-primary-hover);
+  --button: var(--color-irpef);
+  --hover: var(--color-primary-hover);
+  --primary: var(--color-primary);
+  --secondary: var(--color-irpef);
+  --accent: var(--color-irpef);
+  --success: var(--color-net);
   --error: #dc2626;
 
-  --white: #ffffff;
-  --icon-blue: #2563eb;
-  --icon-blue-bg: #eff6ff;
-  --icon-green: #10b981;
-  --icon-green-bg: #f0fdf4;
-  --icon-amber: #f59e0b;
-  --icon-amber-bg: #fff7ed;
-  --icon-indigo: #6366f1;
-  --icon-indigo-bg: #eef2ff;
-  --icon-navy: #1e3a8a;
+  --text-on-dark: var(--color-surface);
+  --text-muted-on-dark: rgba(255, 255, 255, 0.72);
+
+  /* Legacy teal scale → Verde Trust mapping */
+  --teal-50: var(--color-net-tint);
+  --teal-100: var(--color-border);
+  --teal-200: var(--color-border-strong);
+  --teal-300: var(--color-text-muted);
+  --teal-400: var(--color-irpef);
+  --teal-500: var(--color-irpef);
+  --teal-600: #096b52;
+  --teal-700: var(--color-primary);
+  --teal-800: var(--color-text);
+  --teal-900: var(--color-primary);
+
+  --icon-blue: var(--color-inps);
+  --icon-blue-bg: #eef3fd;
+  --icon-green: var(--color-net);
+  --icon-green-bg: var(--color-net-tint);
+  --icon-amber: var(--color-local-tax);
+  --icon-amber-bg: #fdf6e8;
+  --icon-indigo: var(--color-inps);
+  --icon-indigo-bg: #eef3fd;
+  --icon-navy: var(--color-primary);
   --social-linkedin: #0a66c2;
   --social-facebook: #1877f2;
-  --social-x: #000000;
+  --social-x: var(--color-primary);
 
-  --bg: var(--teal-50);
-  --card-shadow: 0 4px 24px rgba(19, 62, 58, 0.06);
-  --card-shadow-lg: 0 16px 48px rgba(19, 62, 58, 0.1);
+  --card-shadow: 0 4px 24px rgba(20, 32, 27, 0.06);
+  --card-shadow-lg: 0 16px 48px rgba(20, 32, 27, 0.1);
 
   --font-primary: var(--font-inter, "Inter"), "Roboto", system-ui, sans-serif;
   --max-content: 1200px;
   --max-prose: 680px;
-  --header-height: 72px;
+  --header-height: 88px;
   --section-padding-y: 56px;
 
-  --header-footer-bg: #ffffff;
-  --header-footer-border: var(--teal-100);
-  --header-footer-text: var(--text-primary);
+  --header-footer-bg: var(--color-surface);
+  --header-footer-border: var(--color-border);
+  --header-footer-text: var(--color-text);
 
-  --bg-hero: var(--teal-50);
-  --bg-calculator: #f5fbfa;
-  --bg-how: #ecf7f5;
-  --bg-breakdown: #e0f2ef;
-  --bg-faq: #d8ede9;
+  --bg-hero: var(--color-bg);
+  --bg-calculator: var(--color-surface-subtle);
+  --bg-how: var(--color-surface-subtle);
+  --bg-breakdown: #edeae3;
+  --bg-faq: var(--color-surface-subtle);
 }
 
 *,
@@ -216,7 +253,7 @@ select {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--button);
+  color: var(--color-text-muted);
   margin-bottom: 12px;
 }
 
@@ -240,15 +277,15 @@ select {
 }
 
 .btn-primary {
-  background: var(--button);
+  background: var(--cta);
   color: var(--white);
-  box-shadow: 0 4px 14px rgba(46, 139, 130, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
 }
 
 .btn-primary:hover {
-  background: var(--hover);
+  background: var(--cta-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(46, 139, 130, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .btn-primary:active {
@@ -257,13 +294,14 @@ select {
 
 .btn-outline {
   background: transparent;
-  color: var(--button);
-  border: 2px solid var(--button);
+  color: var(--color-primary);
+  border: 2px solid var(--color-border-strong);
 }
 
 .btn-outline:hover {
-  background: var(--button);
+  background: var(--color-primary);
   color: var(--white);
+  border-color: var(--color-primary);
 }
 
 .card {
@@ -300,8 +338,8 @@ select {
 .form-input:focus,
 .form-select:focus {
   outline: none;
-  border-color: var(--button);
-  box-shadow: 0 0 0 3px rgba(46, 139, 130, 0.15);
+  border-color: var(--color-net);
+  box-shadow: 0 0 0 3px var(--color-focus);
 }
 
 .form-input.error,
@@ -318,7 +356,7 @@ select {
   background: linear-gradient(
     90deg,
     var(--border) 25%,
-    var(--teal-50) 50%,
+    var(--color-surface-subtle) 50%,
     var(--border) 75%
   );
   background-size: 200% 100%;
@@ -372,13 +410,13 @@ select {
 }
 
 .legal-content a {
-  color: var(--button);
+  color: var(--color-irpef);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
 .legal-content a:hover {
-  color: var(--hover);
+  color: var(--color-primary-hover);
 }
 
 .sr-only {

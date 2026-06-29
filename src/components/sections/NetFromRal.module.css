@@ -1,0 +1,35 @@
+.section {
+  background: var(--bg-how);
+  position: relative;
+}
+
+.inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.inner h2 {
+  margin-bottom: 24px;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.copy p {
+  margin: 0 auto;
+  max-width: 760px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .copy p {
+    text-align: left;
+  }
+}

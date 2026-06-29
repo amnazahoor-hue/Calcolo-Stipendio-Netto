@@ -1,6 +1,7 @@
 "use client";
 
 import { SalaryBreakdown } from "@/lib/salary-calculator";
+import { breakdownColors } from "@/lib/design-tokens";
 import { formatCurrency } from "@/lib/format";
 import styles from "./ProgressBars.module.css";
 
@@ -11,13 +12,13 @@ interface ProgressBarsProps {
 export function ProgressBars({ breakdown }: ProgressBarsProps) {
   const localTax = breakdown.regionalTax + breakdown.municipalTax;
   const items = [
-    { label: "INPS Contributions", value: breakdown.inps, color: "#6366F1" },
-    { label: "IRPEF (Income Tax)", value: breakdown.irpefNetta, color: "#2563EB" },
-    { label: "Regional & Municipal", value: localTax, color: "#F59E0B" },
+    { label: "INPS Contributions", value: breakdown.inps, color: breakdownColors.inps },
+    { label: "IRPEF (Income Tax)", value: breakdown.irpefNetta, color: breakdownColors.irpef },
+    { label: "Regional & Municipal", value: localTax, color: breakdownColors.local },
     {
       label: "Net Take-Home",
       value: breakdown.netAnnual,
-      color: "#10B981",
+      color: breakdownColors.net,
       highlight: true,
     },
   ];
